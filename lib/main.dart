@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
@@ -29,40 +30,76 @@ class MyApp extends StatelessWidget {
       ),
       //home: MyHomePage(title: 'Flutter Demo Home Page'),
       home: DefaultTabController(
-        length: 5,
+        length: 4,
         child: Scaffold(
           appBar: AppBar(
             bottom: TabBar(
               tabs: [
                 Tab(
-                  text: "Tab 1",
+                  text: "Tab_A",
                 ),
                 Tab(
-                  text: "Tab 2",
+                  text: "Tab_B",
                 ),
                 Tab(
-                  text: "Tab 3",
+                  text: "Tab_C",
                 ),
                 Tab(
-                  text: "Tab 4",
+                  text: "Tab_D",
                 ),
-                Tab(
-                  text: "Tab 5",
-                )
               ],
             ),
           ),
           body: TabBarView(
             children: [
-              Icon(Icons.ac_unit),
+              SurveyPage(),
               Icon(Icons.access_alarm),
               Icon(Icons.accessible),
               Icon(Icons.foundation),
-              Icon(Icons.menu_book)
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+class SurveyPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new Container(
+      child: new Column(children: <Widget>[
+        Container(
+          child: Text(
+            "This is a survey question This is a survey question This is a survey question This is a survey question This is a survey question This is a survey question?",
+          ),
+          padding: const EdgeInsets.all(20.0),
+        ),
+        ListTile(
+          title: const Text("option A"),
+          leading: Radio(
+            value: const Text("A"),
+            groupValue: null,
+            onChanged: null,
+          ),
+        ),
+        ListTile(
+          title: const Text("option B"),
+          leading: Radio(
+            value: const Text("B"),
+            groupValue: null,
+            onChanged: null,
+          ),
+        ),
+        ListTile(
+          title: const Text("option C"),
+          leading: Radio(
+            value: const Text("C"),
+            groupValue: null,
+            onChanged: null,
+          ),
+        )
+      ]),
     );
   }
 }
