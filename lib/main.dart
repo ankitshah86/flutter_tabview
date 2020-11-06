@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import './surveyTab.dart';
 import './imageTab.dart';
+import './textTab.dart';
 
 void main() {
   runApp(MyApp());
@@ -42,7 +43,7 @@ class MyApp extends StatelessWidget {
             children: [
               SurveyPage(),
               ImageTab(),
-              Icon(Icons.accessible),
+              TextScroll(),
               Icon(Icons.foundation),
             ],
           ),
