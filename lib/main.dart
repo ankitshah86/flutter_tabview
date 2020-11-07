@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_tabview/listViewTab.dart';
 import './surveyTab.dart';
 import './imageTab.dart';
 import './textTab.dart';
@@ -44,7 +45,7 @@ class MyApp extends StatelessWidget {
               SurveyPage(),
               ImageTab(),
               TextScroll(),
-              Icon(Icons.foundation),
+              ListViewTab(),
             ],
           ),
         ),
