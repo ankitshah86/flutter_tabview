@@ -45,18 +45,5 @@ class ListViewTab extends StatelessWidget {
       ),
       itemCount: listItems.length,
     );
-
-    /* return new ListView(
-      children: <Widget>[
-        Container(
-          height: 30,
-          margin: EdgeInsets.all(10),
-          color: Colors.blue[200],
-          child: const Center(
-            child: Text("List Item 1"),
-          ),
-        ),
-      ],
-    );*/
   }
 }
