@@ -1,31 +1,14 @@
+import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 class ListViewTab extends StatelessWidget {
-  final List<String> listItems = [
-    "List Item 1",
-    "List Item 2",
-    "List Item 3",
-    "List Item 4",
-    "List Item 5",
-    "List Item 6",
-    "List Item 7",
-    "List Item 8",
-    "List Item 9",
-    "List Item 10",
-    "List Item 11",
-    "List Item 12",
-    "List Item 13",
-    "List Item 14",
-    "List Item 15",
-    "List Item 16",
-    "List Item 17",
-    "List Item 18",
-    "List Item 19",
-    "List Item 20",
-  ];
+  final List<String> listItems = [];
 
   Widget build(BuildContext context) {
+    for (var i = 0; i < 20; i++) {
+      listItems.add(WordPair.random().toString());
+    }
     return new ListView.separated(
       itemBuilder: (BuildContext context, int index) {
         return Container(
