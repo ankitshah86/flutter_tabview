@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -14,7 +16,14 @@ class ListViewTab extends StatelessWidget {
         return Container(
           height: 30,
           margin: EdgeInsets.fromLTRB(10, 5, 10, 5),
-          color: Colors.blue[((index % 7) + 1) * 100],
+          decoration: new BoxDecoration(
+            //color: Colors.blue[((index % 7) + 1) * 100],
+            color: Color.fromARGB(150, Random.secure().nextInt(255),
+                Random.secure().nextInt(255), Random.secure().nextInt(255)),
+            borderRadius: new BorderRadius.all(
+              Radius.circular(5),
+            ),
+          ),
           child: Center(
             child: Text(
               '${listItems[index]}',
