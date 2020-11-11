@@ -13,17 +13,23 @@ class ListViewTab extends StatelessWidget {
     }
     return new ListView.separated(
       itemBuilder: (BuildContext context, int index) {
+        var r = Random.secure().nextInt(255);
+        var g = Random.secure().nextInt(255);
+        var b = Random.secure().nextInt(255);
         return Container(
           height: 30,
           margin: EdgeInsets.fromLTRB(10, 5, 10, 5),
           decoration: new BoxDecoration(
-            //color: Colors.blue[((index % 7) + 1) * 100],
-            color: Color.fromARGB(150, Random.secure().nextInt(255),
-                Random.secure().nextInt(255), Random.secure().nextInt(255)),
-            borderRadius: new BorderRadius.all(
-              Radius.circular(5),
-            ),
-          ),
+              //color: Colors.blue[((index % 7) + 1) * 100],
+              color: Color.fromARGB(150, r, g, b),
+              borderRadius: new BorderRadius.all(Radius.circular(5)),
+              boxShadow: [
+                BoxShadow(
+                    blurRadius: 5,
+                    color: Colors.black26,
+                    offset: Offset(3, 3),
+                    spreadRadius: 3)
+              ]),
           child: Center(
             child: Text(
               '${listItems[index]}',
