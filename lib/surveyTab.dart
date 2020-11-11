@@ -1,6 +1,21 @@
 import 'package:flutter/material.dart';
 
-class SurveyPage extends StatelessWidget {
+class SurveyPage extends StatefulWidget {
+  @override
+  _SurveyPageState createState() => _SurveyPageState();
+}
+
+enum options { A, B, C }
+
+class _SurveyPageState extends State<SurveyPage> {
+  options _myoption = options.A;
+  void _optionSelected(options option) {
+    setState(() {
+      _myoption = option;
+      print("Option selected " + option.toString());
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return new Container(
@@ -14,25 +29,26 @@ class SurveyPage extends StatelessWidget {
         ListTile(
           title: const Text("option A"),
           leading: Radio(
-            value: const Text("A"),
-            groupValue: null,
-            onChanged: null,
+            value: options.A,
+            autofocus: true,
+            groupValue: _myoption,
+            onChanged: _optionSelected,
           ),
         ),
         ListTile(
           title: const Text("option B"),
           leading: Radio(
-            value: const Text("B"),
-            groupValue: null,
-            onChanged: null,
+            value: options.B,
+            groupValue: _myoption,
+            onChanged: _optionSelected,
           ),
         ),
         ListTile(
           title: const Text("option C"),
           leading: Radio(
-            value: const Text("C"),
-            groupValue: null,
-            onChanged: null,
+            value: options.C,
+            groupValue: _myoption,
+            onChanged: _optionSelected,
           ),
         )
       ]),
