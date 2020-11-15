@@ -54,7 +54,14 @@ class _SurveyPageState extends State<SurveyPage> {
             ),
           ),
           RaisedButton(
-            onPressed: () {},
+            onPressed: () {
+              showAboutDialog(
+                context: context,
+                applicationName: "Flutter Tabview",
+                applicationVersion: "0.0.1",
+                applicationLegalese: "This is a boilerplate flutter tabview",
+              );
+            },
             textColor: Colors.white,
             padding: EdgeInsets.all(0.0),
             child: Container(
@@ -69,7 +76,7 @@ class _SurveyPageState extends State<SurveyPage> {
               ),
               padding: EdgeInsets.all(10.0),
               child: const Text(
-                "Hello",
+                "About",
                 style: TextStyle(fontSize: 20),
               ),
             ),
